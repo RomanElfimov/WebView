@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		E9E339EE2478076600B91C4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E339ED2478076600B91C4C /* AppDelegate.swift */; };
 		E9E339F02478076600B91C4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E339EF2478076600B91C4C /* SceneDelegate.swift */; };
-		E9E339F22478076600B91C4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E339F12478076600B91C4C /* ViewController.swift */; };
+		E9E339F22478076600B91C4C /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E339F12478076600B91C4C /* LaunchViewController.swift */; };
 		E9E339F52478076600B91C4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9E339F32478076600B91C4C /* Main.storyboard */; };
 		E9E339F72478076800B91C4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9E339F62478076800B91C4C /* Assets.xcassets */; };
 		E9E339FA2478076800B91C4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9E339F82478076800B91C4C /* LaunchScreen.storyboard */; };
+		E9E33A032478079900B91C4C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E33A022478079900B91C4C /* WebKit.framework */; };
+		E9E33A0524780A7400B91C4C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E33A0424780A7400B91C4C /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E9E339EA2478076600B91C4C /* WebViewWithLaunchScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebViewWithLaunchScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9E339ED2478076600B91C4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9E339EF2478076600B91C4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E9E339F12478076600B91C4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E9E339F12478076600B91C4C /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		E9E339F42478076600B91C4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E9E339F62478076800B91C4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9E339F92478076800B91C4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9E339FB2478076800B91C4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9E33A022478079900B91C4C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		E9E33A0424780A7400B91C4C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9E33A032478079900B91C4C /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,7 @@
 			children = (
 				E9E339EC2478076600B91C4C /* WebViewWithLaunchScreen */,
 				E9E339EB2478076600B91C4C /* Products */,
+				E9E33A012478079900B91C4C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +64,22 @@
 			children = (
 				E9E339ED2478076600B91C4C /* AppDelegate.swift */,
 				E9E339EF2478076600B91C4C /* SceneDelegate.swift */,
-				E9E339F12478076600B91C4C /* ViewController.swift */,
+				E9E339F12478076600B91C4C /* LaunchViewController.swift */,
+				E9E33A0424780A7400B91C4C /* WebViewController.swift */,
 				E9E339F32478076600B91C4C /* Main.storyboard */,
 				E9E339F62478076800B91C4C /* Assets.xcassets */,
 				E9E339F82478076800B91C4C /* LaunchScreen.storyboard */,
 				E9E339FB2478076800B91C4C /* Info.plist */,
 			);
 			path = WebViewWithLaunchScreen;
+			sourceTree = "<group>";
+		};
+		E9E33A012478079900B91C4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9E33A022478079900B91C4C /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +153,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9E339F22478076600B91C4C /* ViewController.swift in Sources */,
+				E9E339F22478076600B91C4C /* LaunchViewController.swift in Sources */,
 				E9E339EE2478076600B91C4C /* AppDelegate.swift in Sources */,
 				E9E339F02478076600B91C4C /* SceneDelegate.swift in Sources */,
+				E9E33A0524780A7400B91C4C /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
