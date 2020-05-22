@@ -9,10 +9,13 @@
 import UIKit
 
 class LaunchViewController: UIViewController {
-
+    
+    //MARK: - Properties
     let timeInterval = 0.8
     var timer: Timer?
     var progress: Float = 0
+    
+    //MARK: - Outlet
     
     @IBOutlet weak var progressView: UIProgressView!
    
@@ -23,12 +26,16 @@ class LaunchViewController: UIViewController {
     }
 
     
+    //MARK: - Methods
+    
+    // Запуск progressView
     private func startProgress() {
         progress += 0.1
         timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(tic), userInfo: nil, repeats: true)
         timer?.fire()
     }
     
+    // Селектор для startProgress()
     @objc func tic() {
         progress += 0.1
         progressView.progress = progress

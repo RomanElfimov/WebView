@@ -11,11 +11,14 @@ import WebKit
 
 class WebViewController: UIViewController {
     
+    //MARK: - Properties
     let urlString: String = "https://ru.wikipedia.org"
+    var activityViewController: UIActivityViewController? = nil
     
-    var activityViewController: UIActivityViewController? = nil 
+    //MARK: - Outlets
     
     @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var goBackButton: UIBarButtonItem!
     @IBOutlet weak var goForwardButton: UIBarButtonItem!
     
@@ -29,6 +32,21 @@ class WebViewController: UIViewController {
         webView.navigationDelegate = self
         webView.allowsBackForwardNavigationGestures = true
     }
+    
+    //MARK: - Method
+     
+    //метод включает/выключает индикатор загрузки
+    func isWorkingIndicator(isAnimated: Bool, indicator: UIActivityIndicatorView) {
+        if isAnimated {
+            indicator.startAnimating()
+            indicator.isHidden = false
+        } else {
+            indicator.stopAnimating()
+            indicator.isHidden = true
+        }
+    }
+    
+    //MARK: - Actions
     
     @IBAction func goBackButtonTapped(_ sender: Any) {
         if webView.canGoBack {
@@ -61,12 +79,17 @@ extension WebViewController: WKNavigationDelegate {
     
     // Метод срабатывает во время начала загрузки страницы. Кнопки назад, вперед недоступны
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        //включаем индикатор загрузки
+        isWorkingIndicator(isAnimated: true, indicator: activityIndicator)
+        
         goBackButton.isEnabled = false
         goForwardButton.isEnabled = false
     }
     
     // Метод срабатывает после загрузки страницы
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        //выключаем индикатор загрузки
+        isWorkingIndicator(isAnimated: false, indicator: activityIndicator)
         // Если возможно - кнопки доступны
         if webView.canGoBack {
             goBackButton.isEnabled = true

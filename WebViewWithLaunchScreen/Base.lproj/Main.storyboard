@@ -96,11 +96,16 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="4LQ-41-5nv">
+                                <rect key="frame" x="197" y="56" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="rS0-fX-1VW" secondAttribute="bottom" id="D19-fM-oxN"/>
                             <constraint firstItem="JmX-mb-TDm" firstAttribute="leading" secondItem="aoq-aX-8mR" secondAttribute="leading" id="FRS-oy-30j"/>
+                            <constraint firstItem="4LQ-41-5nv" firstAttribute="top" secondItem="aoq-aX-8mR" secondAttribute="top" constant="12" id="RNw-Nq-V5S"/>
+                            <constraint firstItem="4LQ-41-5nv" firstAttribute="centerX" secondItem="0VH-2y-NAp" secondAttribute="centerX" id="SCf-Y8-43I"/>
                             <constraint firstItem="JmX-mb-TDm" firstAttribute="trailing" secondItem="aoq-aX-8mR" secondAttribute="trailing" id="bgB-r1-DI4"/>
                             <constraint firstItem="rS0-fX-1VW" firstAttribute="leading" secondItem="aoq-aX-8mR" secondAttribute="leading" id="cht-Zd-zrj"/>
                             <constraint firstItem="rS0-fX-1VW" firstAttribute="top" secondItem="JmX-mb-TDm" secondAttribute="bottom" id="ffj-0R-gky"/>
@@ -111,6 +116,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="qXq-a9-DaT"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="4LQ-41-5nv" id="1zh-VX-1cN"/>
                         <outlet property="goBackButton" destination="epB-aR-eoC" id="Ifj-0m-NIb"/>
                         <outlet property="goForwardButton" destination="NxX-vq-Wul" id="VHf-FQ-8PR"/>
                         <outlet property="webView" destination="rS0-fX-1VW" id="FRf-6W-edq"/>
