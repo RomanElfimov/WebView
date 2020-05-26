@@ -1,6 +1,7 @@
 # WebView
 
 Example WebView with tab bar and download imitation.
+Besides WebView you can use goBack, goForward, share and refresh actions in tab bar.
 
 ## Screenshots
 
